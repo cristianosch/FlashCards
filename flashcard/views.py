@@ -38,7 +38,7 @@ def novo_flashcard(request):
         
         if len(pergunta.strip()) == 0 or len(resposta.strip()) == 0:
             messages.add_message(request,constants.ERROR,'Preencha os campos de pergunta e resposta',)
-            return redirect('/flashcard/novo_flashcard/')
+            return redirect('/')
         flashcard = Flashcard(
             user=request.user,
             pergunta=pergunta,
@@ -49,7 +49,7 @@ def novo_flashcard(request):
         flashcard.save()
         messages.add_message(
             request, constants.SUCCESS, 'Flashcard criado com sucesso')
-        return redirect('novo_flashcard')
+        return redirect('/')
       
       
 
@@ -57,10 +57,10 @@ def deletar_flashcard(request, id):
     flashcard = Flashcard.objects.filter(user=request.user, id=id)
     if not flashcard:
         messages.add_message(request, constants.ERROR, 'Você esta tentando fazer algo errado')
-        return redirect('novo_flashcard')
+        return redirect('/')
     flashcard.delete()
     messages.add_message(request, constants.SUCCESS, 'Flashcard deletado com sucesso!')
-    return redirect('/flashcard/novo_flashcard/')
+    return redirect('/')
 
 
 def iniciar_desafio(request):
