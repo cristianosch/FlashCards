@@ -43,14 +43,15 @@
     </div>
  <br>
  <br>
- <div class="box-listar">
+
+<div class="box-listar">
+    <div class="table-responsive">
     <table>
         <thead >
             <tr>
                 <th scope="col">Desafio</th>                
                 <th scope="col">Titulo</th>
-                <th scope="col">Dificuldade</th>
-                <th scope="col">Status</th>
+                <th scope="col">Dificuldade</th>                
             </tr>
         </thead>  
     <tbody >
@@ -58,13 +59,13 @@
         <tr class="linha">
             <th><a href="{% url 'desafio' desafio.id %}">{{desafio.id}}</a></th>            
             <td>{{desafio.titulo}}</td>
-            <td>{{desafio.get_dificuldade_display}}</td>
-            <td>{{desafio.status}}</td>
+            <td>{{desafio.get_dificuldade_display}}</td>            
         </tr>
-        {% endfor %}
+        {% endfor %}        
     </tbody>
  </table>
  </div>
  </div>
+
 
 {% endblock 'conteudo' %}

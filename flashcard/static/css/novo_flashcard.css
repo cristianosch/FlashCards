@@ -49,3 +49,7 @@
     font-size: 25px;
     color: orangered;
 }
+span{
+    color: rgb(204, 40, 233);
+    text-transform: capitalize;
+}

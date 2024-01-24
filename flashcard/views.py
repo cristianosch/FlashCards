@@ -67,21 +67,22 @@ def deletar_flashcard(request, id):
 
 def iniciar_desafio(request):
     if request.method == 'GET':
+        desafios = Desafio.objects.all()
         categorias = Categoria.objects.all()
         dificuldades = Flashcard.DIFICULDADE_CHOICES
         return render(
             request,
             'iniciar_desafio.html',
-            {'categorias': categorias, 'dificuldades': dificuldades},
+            {'categorias': categorias, 
+             'dificuldades': dificuldades,
+             'desafios': desafios},
         )
     elif request.method == 'POST':
         titulo = request.POST.get('titulo')
         categorias = request.POST.getlist('categoria')
         dificuldade = request.POST.get('dificuldade')
-        qtd_perguntas = request.POST.get('qtd_perguntas')
-        
-    # Criando a instancia da classe Desafio
-    # Os campos Categorias e flashcards são ManyToManyField, então precisa criar o desafio para depois criar e linkar esses campos
+        qtd_perguntas = request.POST.get('qtd_perguntas')       
+
 
         desafio = Desafio(
             user=request.user,
@@ -118,9 +119,7 @@ def iniciar_desafio(request):
     
         
 def listar_desafio(request):
-    desafios = Desafio.objects.filter(user=request.user)      
-    # TODO: DESENVOLVER O STATUS
-    
+    desafios = Desafio.objects.filter(user=request.user)       
     # ADIÇÃO O FILTRO DE BUSCA     
     if request.method == 'GET':   
         categorias = Categoria.objects.all()               
@@ -139,7 +138,7 @@ def listar_desafio(request):
         return render(request,'listar_desafio.html',{
             'desafios': desafios,
             'categorias': categorias,
-            'dificuldades': dificuldades,            
+            'dificuldades': dificuldades,                     
             })
     
     

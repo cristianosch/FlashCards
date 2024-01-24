@@ -15,7 +15,8 @@
     <br>
     <br>
     <h2 class="fonte-principal">Iniciar desafio</h2>
-    <p class="fonte-secundaria">Escolha as categorias e a dificuldade do desafio</p>
+    <h3 class="fonte-secundaria">Escolha as categorias e a dificuldade do desafio</h3>
+    <br>
  <div class="row">
 
     <div class="col-md">
@@ -25,7 +26,8 @@
     </div>
     <div class="col-md">
         <label>Categoria</label>
-            <select name="categoria" class="form-select" multiple>
+            <select name="categoria" class="form-select" >
+                <option value="">Todas as categorias</option>
                 {% for categoria in categorias %}
                     <option value="{{categoria.id}}">
                         {{categoria.nome}}
@@ -53,5 +55,27 @@
         <br>
         <input type="submit" class="btn-cadastro" value="Iniciar desafio">
     </form>
- </div>
+<br>
+<br>
+<div class="table-responsive">
+    <table class="table">
+        <thead >
+            <tr>
+                <th scope="col">Categoria</th>                        
+                <th scope="col">Dificuldade</th>
+                <th scope="col">Qtd Perguntas</th>
+            </tr>
+        </thead>  
+        <tbody >
+        {% for desafio in desafios %}
+        <tr class="linha">
+            <td>{{ desafio.categoria.all|join:", " }}</td>            
+            <td>{{ desafio.dificuldade }}</td>
+            <td>{{ desafio.quantidade_perguntas }}</td>            
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+
 {% endblock 'conteudo' %}
