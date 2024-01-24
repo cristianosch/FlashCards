@@ -20,9 +20,11 @@ def novo_flashcard(request):
                 
         if categoria_filtrar:
             flashcards = flashcards.filter(categoria__id = categoria_filtrar)
+            #print(f'Aqui deve aparecer a categoria {categoria_filtrar}\n')
             
         if dificuldade_filtrar:
             flashcards = flashcards.filter(dificuldade = dificuldade_filtrar)
+            #print(f'Aqui deve aparecer o nivel de dificuldade {dificuldade_filtrar}\n')
                
         return render(request,'novo_flashcard.html',
                       {'categorias': categorias,
@@ -77,6 +79,9 @@ def iniciar_desafio(request):
         categorias = request.POST.getlist('categoria')
         dificuldade = request.POST.get('dificuldade')
         qtd_perguntas = request.POST.get('qtd_perguntas')
+        
+    # Criando a instancia da classe Desafio
+    # Os campos Categorias e flashcards são ManyToManyField, então precisa criar o desafio para depois criar e linkar esses campos
 
         desafio = Desafio(
             user=request.user,
@@ -113,14 +118,31 @@ def iniciar_desafio(request):
     
         
 def listar_desafio(request):
-    desafios = Desafio.objects.filter(user=request.user)
+    desafios = Desafio.objects.filter(user=request.user)      
     # TODO: DESENVOLVER O STATUS
-    # TODO: DESENVOLVER OS FILTROS
-    return render(request,'listar_desafio.html',{
-    'desafios': desafios,
-    },)
-
-
+    
+    # ADIÇÃO O FILTRO DE BUSCA     
+    if request.method == 'GET':   
+        categorias = Categoria.objects.all()               
+        dificuldades = Flashcard.DIFICULDADE_CHOICES            
+        categoria_filtrar = request.GET.get('categoria')             
+        #print(f'Aqui deve aparecer a categoria {categoria_filtrar}\n')                 
+        dificuldade_filtrar = request.GET.get('dificuldade')        
+        if categoria_filtrar:
+            desafios = desafios.filter(categoria__id = categoria_filtrar)            
+            
+        if dificuldade_filtrar:
+            desafios = desafios.filter(dificuldade = dificuldade_filtrar)
+            #print(f'Aqui deve aparecer o nivel de dificuldade {dificuldade_filtrar}\n')
+            
+            
+        return render(request,'listar_desafio.html',{
+            'desafios': desafios,
+            'categorias': categorias,
+            'dificuldades': dificuldades,            
+            })
+    
+    
 
 def desafio(request, id):
     desafio = Desafio.objects.get(id=id)
@@ -152,6 +174,7 @@ def responder_flashcard(request, id):
     flashcard_desafio.acertou = True if acertou == '1' else False
     flashcard_desafio.save()
     return redirect(f'/flashcard/desafio/{desafio_id}/')
+
 
 
 def relatorio(request, id):
