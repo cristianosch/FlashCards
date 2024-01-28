@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=False)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['flashcards.uk.to', '89.116.38.163', 'http://flashcards.uk.to']
 
 
 # Application definition
