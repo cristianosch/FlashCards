@@ -6,7 +6,7 @@ from django.http import Http404
 
 
  
-def novo_flashcard(request):
+def index(request):
     if not request.user.is_authenticated:
         return redirect('/usuarios/login/')
     
@@ -26,7 +26,7 @@ def novo_flashcard(request):
             flashcards = flashcards.filter(dificuldade = dificuldade_filtrar)
             #print(f'Aqui deve aparecer o nivel de dificuldade {dificuldade_filtrar}\n')
                
-        return render(request,'novo_flashcard.html',
+        return render(request,'index.html',
                       {'categorias': categorias,
                        'dificuldades': dificuldades,
                        'flashcards': flashcards,

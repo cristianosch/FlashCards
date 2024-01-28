@@ -23,7 +23,7 @@ from flashcard import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('usuarios/', include('usuarios.urls')),
-    path('', views.novo_flashcard, name='novo_flashcard'),
+    path('', views.index, name='index'),
     path('flashcard/', include('flashcard.urls')),
     path('apostilas/', include('apostilas.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
