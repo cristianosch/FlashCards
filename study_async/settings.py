@@ -28,6 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=False)
 
+#ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['flashcards.uk.to', '89.116.38.163', 'http://flashcards.uk.to']
 
 
@@ -78,10 +79,14 @@ WSGI_APPLICATION = 'study_async.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# settings.py
-
-
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+'''
 
 DATABASES = {
     'default': {
@@ -131,7 +136,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'flashcard/static'),)
-STATIC_ROOT = os.path.join('static')
 MEDIA_ROOT = os.path.join(BASE_DIR)
 MEDIA_URL = '/media/'
 
