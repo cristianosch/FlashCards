@@ -29,7 +29,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool, default=False)
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['flashcards.uk.to', '89.116.38.163', 'http://flashcards.uk.to']
+ALLOWED_HOSTS = ['flashcards.uk.to', '89.116.38.163', 'http://flashcards.uk.to', 'https://flashcards.uk.to']
 
 
 # Application definition
