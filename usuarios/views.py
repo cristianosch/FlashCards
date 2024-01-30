@@ -27,8 +27,9 @@ def login(request):
         
         
 def logout(request):
-    auth.logout(request)
-    return redirect('/usuarios/login')
+    if request.method == "GET":
+        auth.logout(request)
+        return redirect('/usuarios/logout')
 
 
 def cadastro(request):
