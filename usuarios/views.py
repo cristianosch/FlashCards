@@ -29,7 +29,7 @@ def login(request):
 def logout(request):
     if request.method == "GET":
         auth.logout(request)
-        messages.add_message(request, constants.ERROR, 'Você efetuou o logout com sucesso')
+        messages.add_message(request, constants.SUCCESS, 'Você efetuou o logout com sucesso')
         return redirect('/usuarios/login/')
 
 
