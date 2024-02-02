@@ -160,3 +160,25 @@ MESSAGE_TAGS = {
  constants.INFO: 'alert-info',
  constants.WARNING: 'alert-warning',
 }
+
+# ADICIONANDO CAMINHO PARA error.log PARA PODER VERIFICAR OS ERROS DO PROGRAMA
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': '/usr/local/lsws/logs/error.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
+
