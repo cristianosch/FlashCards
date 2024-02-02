@@ -163,6 +163,10 @@ MESSAGE_TAGS = {
 
 # ADICIONANDO CAMINHO PARA error.log PARA PODER VERIFICAR OS ERROS DO PROGRAMA
 
+# Configuração para personalizar a página de erro 500
+
+ADMINS = [('Cristiano Schroeder', 'cristiano85sch@gmail.com')]
+
 LOGGING = {
      'version': 1,
      'disable_existing_loggers': False,
