@@ -170,7 +170,7 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': '/usr/local/lsws/logs/error.log',
+            'filename': '/home/flashcards.uk.to/public_html/error.log',
         },
     },
     'loggers': {
