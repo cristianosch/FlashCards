@@ -12,7 +12,7 @@ class Categoria(models.Model):
 class Flashcard(models.Model):
     DIFICULDADE_CHOICES = (('D', 'Difícil'), ('M', 'Médio'), ('F', 'Fácil'))
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    pergunta = models.CharField(max_length=300)
+    pergunta = models.CharField(max_length=300, null=True)
     resposta = models.TextField(null=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
     dificuldade = models.CharField(max_length=1, choices=DIFICULDADE_CHOICES)
