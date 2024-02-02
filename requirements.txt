@@ -1,7 +1,7 @@
 asgiref
 Django
-pillow==10.2.0
-sqlparse==0.4.4
+pillow
+sqlparse
 typing_extensions
-tzdata==2023.4
-python-decouple==3.8
+tzdata
+python-decouple
