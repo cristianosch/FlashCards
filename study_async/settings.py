@@ -164,21 +164,41 @@ MESSAGE_TAGS = {
 # ADICIONANDO CAMINHO PARA error.log PARA PODER VERIFICAR OS ERROS DO PROGRAMA
 
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': '/home/flashcards.uk.to/public_html/error.log',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    },
-}
 
+     'version': 1,
+
+     'disable_existing_loggers': False,
+
+     'handlers': {
+
+         'console': {
+
+             'class': 'logging.StreamHandler',
+
+         },
+
+        'file': {
+
+            'level': 'DEBUG',
+
+            'class': 'logging.FileHandler',
+
+            'filename': 'log_error.django',
+
+        },
+
+     },
+
+     'loggers': {
+
+         'django': {
+
+             'handlers': ['console','file'],
+
+             'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+
+         },
+
+     },
+
+}
