@@ -173,7 +173,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'log_error.django'),
+            'filename': 'flashcards.uk.to.error_log',
         },
      },
      'loggers': {

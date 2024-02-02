@@ -5,3 +5,5 @@ sqlparse
 typing_extensions
 tzdata
 python-decouple
+mysqlclient
+whitenoise
