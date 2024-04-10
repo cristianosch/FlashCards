@@ -1,5 +1,5 @@
 asgiref
-Django==4.2.9
+Django
 django-environ==0.11.2
 django-postgresql==0.0.3
 mysqlclient
