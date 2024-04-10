@@ -1,5 +1,13 @@
 /venv
 venv
+
+/virtu
+virtu
+
+/__pycache__
+
+/migrations
+
 db.sqlite3
 /_pycache_
 _pycache_
