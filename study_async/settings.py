@@ -27,13 +27,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+#SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = 'django-insecure-nbd%gg1vkvo$+tlbl7neegzf*pb=ul76#)l31d*dkjy4iwelae'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG', cast=bool, default=False)
+#DEBUG = env('DEBUG', cast=bool, default=False)
+DEBUG = True
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['flashcards.uk.to', '89.116.38.163', 'http://flashcards.uk.to', 'https://flashcards.uk.to']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -52,7 +54,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    #"whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     "django.middleware.security.SecurityMiddleware",    
@@ -85,13 +87,14 @@ WSGI_APPLICATION = 'study_async.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 '''
 
 DATABASES = {
@@ -102,7 +105,7 @@ DATABASES = {
     'PASSWORD': env('DATABASE_PASS'),
     }
 }
-
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -141,8 +144,8 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'flashcard/static'),)
-MEDIA_ROOT = os.path.join(BASE_DIR)
+#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'flashcard/static'),)
+#MEDIA_ROOT = os.path.join(BASE_DIR)
 MEDIA_URL = '/media/'
 
 STATIC_ROOT = '/home/flashcards.uk.to/public_html/study_async/static'
