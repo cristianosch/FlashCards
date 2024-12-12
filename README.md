@@ -1,12 +1,4 @@
- (                                                    
- )\ )  (               )    (                (        
-(()/(  )\    )      ( /(    )\      )  (     )\ )     
- /(_))((_)( /(  (   )\()) (((_)  ( /(  )(   (()/( (   
-(_))_| _  )(_)) )\ ((_)\  )\___  )(_))(()\   ((_)))\  
-| |_  | |((_)_ ((_)| |(_)((/ __|((_)_  ((_)  _| |((_) 
-| __| | |/ _` |(_-<| ' \  | (__ / _` || '_|/ _` |(_-< 
-|_|   |_|\__,_|/__/|_||_|  \___|\__,_||_|  \__,_|/__/ 
-                                                 
+                                                
 # Django Flashcards App
 
 ![Django](https://img.shields.io/badge/Django-4.0-green)
@@ -14,6 +6,8 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 **Flashcards App** is a dynamic and user-friendly Django-based application designed to enhance your study sessions. This app allows you to create, manage, and interact with flashcards, track your progress, and visualize additional study materials.
+
+<img src="img/criar.png" width="400" height="350">
 
 ## Features
 
