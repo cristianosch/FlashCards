@@ -123,3 +123,8 @@ For any questions or suggestions, feel free to open an issue or reach out via em
 ---
 
 Leave a star ⭐ on the repository if you find it useful!
+
+<img src="img/respostas.png" width="250" heigth="400">
+<img src="img/desafio.png" width="400" heigth="200">
+<img src="img/resultado.png" width="400" heigth="200">
+<img src="img/criar.png" width="400" heigth="300">
