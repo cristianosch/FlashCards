@@ -7,7 +7,7 @@
 
 **Flashcards App** is a dynamic and user-friendly Django-based application designed to enhance your study sessions. This app allows you to create, manage, and interact with flashcards, track your progress, and visualize additional study materials.
 
-<img src="img/criar.png" width="400" height="350">
+<img src="img/criar.png" width="400" height="300">
 
 ## Features
 
